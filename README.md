@@ -36,7 +36,7 @@ This repository is desiged to run EF5 operational over West Africa. Users should
 - **tito-utils:** This folder contains the utilities and codes needed to run TITO. 
 
 ## How to run? 
-After finishing the instalation of the required environment and populate the EF5 corresponding folders, run TITO by:
+After completing the installation of the required environment and populating the corresponding EF5 folders, run TITO by:
 ```sh
   ./pipeline.sh
 ```
