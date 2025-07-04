@@ -16,7 +16,7 @@ TITO is a framework designed to run the EF5 hydrologic model operationally, inte
   ```
 After the process is finished, check in your TITO folder the presence of a new subfolder: ML.
 
-## What the folder is composed with ?
+## Repository structure
 
 This repository is desiged to run EF5 operational over West Africa. Users should populate the folders using the topographical and parameters grids for the region of interest and modify the control file (templates/control.txt) accordingly. A guide step-by-step to create the needed layers can be found in: [EF5-builder-toolkit](https://github.com/AHWALab/EF5-builder-toolkit).
 
