@@ -4,15 +4,15 @@ TITO is a framework designed to run the EF5 hydrologic model operationally, inte
 ## First steps
 1. Clone this repository 
   ```sh
-      git clone https://github.com/AHWALab/TITO.git
+  git clone https://github.com/AHWALab/TITO.git
   ```
 2. Navigate to the repository folder
   ```sh
-     cd TITO/
+  cd TITO/
   ```
 3. Run the set up file. This step might take few minutes. 
   ```sh
-      ./setup_tito.sh
+  ./setup_tito.sh
   ```
 After the process is finished, check in your TITO folder the presence of a new subfolder: ML.
 
@@ -38,6 +38,6 @@ This repository is desiged to run EF5 operational over West Africa. Users should
 ## How to run? 
 After completing the installation of the required environment and populating the corresponding EF5 folders, run TITO by:
 ```sh
-  ./pipeline.sh
+./pipeline.sh
 ```
 
