@@ -12,7 +12,7 @@ TITO is a framework designed to run the EF5 hydrologic model operationally, inte
   ```
 3. Run the set up file. This step might take few minutes. 
   ```sh
-      bash setup_tito.sh
+      ./setup_tito.sh
   ```
 After the process is finished, check in your TITO folder the presence of a new subfolder: ML.
 
