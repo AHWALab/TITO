@@ -1,0 +1,16 @@
+<PAMDataset>
+  <Metadata>
+    <MDI key="ALGORITHM">HYDROSHEDS</MDI>
+    <MDI key="CREATION_DATE">2023-04-28</MDI>
+  </Metadata>
+  <PAMRasterBand band="1">
+    <Metadata>
+      <MDI key="STATISTICS_APPROXIMATE">YES</MDI>
+      <MDI key="STATISTICS_MAXIMUM">2522733</MDI>
+      <MDI key="STATISTICS_MEAN">-1.4363767670446e+38</MDI>
+      <MDI key="STATISTICS_MINIMUM">-3.4028234663853e+38</MDI>
+      <MDI key="STATISTICS_STDDEV">1.6806422440735e+38</MDI>
+      <MDI key="STATISTICS_VALID_PERCENT">97.76</MDI>
+    </Metadata>
+  </PAMRasterBand>
+</PAMDataset>
