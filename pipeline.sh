@@ -12,4 +12,3 @@ python3 orchestrator.py westafrica1km_config.py
 
 conda deactivate
 
-rm precipEF5/*

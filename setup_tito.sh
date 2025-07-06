@@ -25,6 +25,3 @@ echo "Creating necessary directories..."
 mkdir -p ../servir_nowcasting_examples/temp
 mkdir -p data
 mkdir -p ../servir_nowcasting_examples/results
-mkdir -p ../../precip
-mkdir -p ../../precipEF5
-mkdir -p ../../qpf_store
