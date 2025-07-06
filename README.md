@@ -27,7 +27,7 @@ Users must populate the required folders with topographic and parameter grids fo
 - **`orchestrator.py`** – Main Python script that manages the entire workflow.
 - **`pipeline.sh`** – Bash script that activates the `tito_env` Conda environment and executes `orchestrator.py` using settings from `westafrica1km_config.py`.
 
-### 📂 Input / Output Directories
+### Input / Output Directories
 - **`basic/`** – Contains DEM, FAC, and FDIR files.
 - **`pet/`** – Contains monthly PET (Potential Evapotranspiration) grids.
 - **`parameters/`** – Contains distributed parameters for the KW and CREST models.
