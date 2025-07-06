@@ -19,28 +19,10 @@ from os import makedirs, listdir, rename, remove
 import glob
 from datetime import datetime as dt
 from datetime import timedelta
-import errno
-import datetime
-import time
 import numpy as np
 import re
 import subprocess
-import threading
 import sys
-import socket
-import shutil
-import smtplib
-from email.mime.multipart import MIMEMultipart
-from email.mime.base import MIMEBase
-from email.mime.text import MIMEText
-from email import encoders
-from multiprocessing.pool import ThreadPool
-import requests
-from bs4 import BeautifulSoup
-import osgeo.gdal as gdal
-from osgeo.gdal import gdalconst
-from osgeo.gdalconst import GA_ReadOnly
-import time
 
 from tito_utils.file_utils import cleanup_precip
 from tito_utils.qpe_utils import get_new_precip
@@ -65,6 +47,7 @@ def main(args):
     # Read the configuration file
     import westafrica1km_config as config_file
     print(">>> Config file loaded")
+    
     domain = config_file.domain
     subdomain = config_file.subdomain
     xmin = config_file.xmin
