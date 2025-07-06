@@ -1,7 +1,7 @@
 # Threading Inputs to Outputs (TITO)
 TITO is a framework designed to run the EF5 hydrologic model operationally, integrating satellite data and machine learning techniques.
 
-## First steps
+## How to install?
 1. Clone this repository 
   ```sh
   git clone https://github.com/AHWALab/TITO.git
