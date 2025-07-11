@@ -62,7 +62,7 @@ def run_ml_nowcast(currentTime,precipFolder, nowcast_model_name, xmin, ymin, xma
         for file in tif_files:
             filename = os.path.basename(file)
             file_date_str = filename.split('.')[2]
-            file_date = datetime.datetime.strptime(file_date_str, '%Y%m%d%H%M')
+            file_date = datetime.strptime(file_date_str, '%Y%m%d%H%M')
             if most_recent_date is None or file_date > most_recent_date:
                 most_recent_date = file_date
                 most_recent_file = file
