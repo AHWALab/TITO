@@ -10,10 +10,15 @@ TITO is a framework designed to run the EF5 hydrologic model operationally, inte
   ```sh
   cd TITO/
   ```
-**3. Navigate to the repository folder**
+**3. Run the set up code**
    This step might take few minutes. 
   ```sh
   ./setup_tito.sh
+  ```
+**4. Add the new conda env to your routines**
+  Open `pipeline.sh` and change the path to the conda environment, should be something like this:
+  ```
+  source /Users/$username$/miniconda3/etc/profile.d/conda.sh
   ```
 After installation, ensure that your TITO folder contains the following subdirectories and files.
 
@@ -40,9 +45,26 @@ Users must populate the required folders with topographic and parameter grids fo
 - **`ML/`** – Contains machine learning routines used to generate QPF forecasts.
 - **`tito_utils/`** – Collection of utility modules and helper scripts used internally by TITO.
 
-## How to run? 
-After completing the installation of the required environment and populating the corresponding EF5 folders, run TITO by:
-```sh
-./pipeline.sh
-```
+## How to run?
+**1. Edit the config file:**
+After completing the installation of the required environment and populating the corresponding EF5 folders, open `westafrica_1km_config.py` file. There are few lines users need to change in this config file to run TITO successfully:
+- **ef5Path:** Update this path to the corresponding ef5's binary path in your system.
+- **HindCastMode:** If you are running an event happened in the PAST, set `HindCastMode = True` and write the date of interest in `HindCastDate`, use the format "YYYY-MM-DD HH:MM". If you want to run it in Nowcast Mode (meaning TITO will start running in the present time) set `HindCastMode = False`
+- **email_gpm:** This version of TITO uses IMERG Early V07 as QPE, you will need to create and account in GPM server to download precipitation files, please visit [NASA GPM registration web page](https://registration.pps.eosdis.nasa.gov/registration/) and follow the instruction provided in the webpage. **Important:** use your registration email as password so TITO can use it in the routines.
+
+**What if I want to use TITO in other regions?**
+
+If you plan to run TITO outside the default West Africa domain, there are a few important considerations. The machine learning routines were designed and trained using IMERG V07 data (0.1° resolution) over the West Africa region (xmin = −21.4, xmax = 30.4; ymin = −2.9, ymax = 33.1), corresponding to a grid size of **518 × 360 pixels**.
+
+If you intend to apply TITO to a different region, we recommend selecting an area with the same spatial dimensions (518 × 360 pixels) to ensure compatibility with the input structure. For applications outside the original training domain, we suggest using one of the advection-based algorithms included in the repository—LINDA, STEPS, or the Lagrangian method. Unlike the ConvLSTM-based model, these methods do not require prior training and are not dependent on region-specific climatology or data-driven learning. They rely on physical principles of motion and can be applied directly to precipitation fields in any region, provided the input data has a compatible resolution and format.
+
+**2. run TITO:**
+  Run the following line in your terminal:
+  ```sh
+  ./pipeline.sh
+  ```
+
+## Contact
+Please contact Vanessa Robledo at vanessa-robledodelgado@uiowa.edu or the [AHWA Laboratory](https://ahwa.lab.uiowa.edu/) Development team at engr-ahwa-lab@uiowa.edu.
+
 
