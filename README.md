@@ -58,7 +58,7 @@ If you plan to run TITO outside the default West Africa domain, there are a few 
 
 If you intend to apply TITO to a different region, we recommend selecting an area with the same spatial dimensions (518 × 360 pixels) to ensure compatibility with the input structure. For applications outside the original training domain, we suggest using one of the advection-based algorithms included in the repository—LINDA, STEPS, or the Lagrangian method. Unlike the ConvLSTM-based model, these methods do not require prior training and are not dependent on region-specific climatology or data-driven learning. They rely on physical principles of motion and can be applied directly to precipitation fields in any region, provided the input data has a compatible resolution and format.
 
-**2. run TITO:**
+**2. Run TITO:**
   Run the following line in your terminal:
   ```sh
   ./pipeline.sh
