@@ -67,4 +67,6 @@ If you intend to apply TITO to a different region, we recommend selecting an are
 ## Contact
 Please contact Vanessa Robledo at vanessa-robledodelgado@uiowa.edu or the [AHWA Laboratory](https://ahwa.lab.uiowa.edu/) Development team at engr-ahwa-lab@uiowa.edu.
 
+## Cite this package
+Robledo Delgado, V., & Vergara, H. (2025). Threading Inputs to Outputs (TITO) (v1.0.0). Zenodo. https://doi.org/10.5281/zenodo.16753855
 
