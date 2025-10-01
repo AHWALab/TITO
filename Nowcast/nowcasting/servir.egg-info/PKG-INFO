@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: servir
+Version: 1.0
+Summary: Package containing code for Nowcasting in SERVIR project
+Author: 
+Author-email: 
+Requires-Python: >=3.12
+License-File: LICENSE
+
+# nowcasting
