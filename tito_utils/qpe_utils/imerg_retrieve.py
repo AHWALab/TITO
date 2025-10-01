@@ -172,11 +172,12 @@ def get_new_precip(current_timestamp, ppt_server_path, precipFolder, email, Hind
     
     #the first hour of nowcast files will be current time - 3.5h
     nowcast_older = current_timestamp - timedelta(hours = 3.5) #This is the first nowcast file to be created 
+    
     if tif_files:
         print("    There are IMERG files in the precip folder")
         # Extract the most recent date from files
-        latest_date = max(tif_files, key=lambda x: datetime.datetime.strptime(x[10:22], '%Y%m%d%H%M'))
-        formatted_latest_pptfile = datetime.datetime.strptime(latest_date[10:22], '%Y%m%d%H%M') #last file on precip
+        latest_date = max(tif_files, key=lambda x: datetime.datetime.strptime(x[10:22], '%Y%m%d%H%M')) #to improve 
+        formatted_latest_pptfile = datetime.datetime.strptime(latest_date[10:22], '%Y%m%d%H%M') #last file on imerg precip
         #if the latest imerg file in folder corresponds to the older nowcast file (current time - 4h)
         if formatted_latest_pptfile < nowcast_older:
             # and if the time difference betwen the current timestep and the latest imerg in folder is less than 30 min.
@@ -211,9 +212,10 @@ def get_new_precip(current_timestamp, ppt_server_path, precipFolder, email, Hind
                                 # Copiar el archivo al directorio de destino
                                 shutil.copy2(source_file, destination_file)
                                 print(f"    File '{filename}' was copied in '{precipFolder}'")
+                            else:   
                                 break                          
             else: 
-                print(f"    There's more than a 60 min gap between {nowcast_older-timedelta(minutes=30)} and the latest geoTIFF file {formatted_latest_pptfile}")
+                print(f"    There's more than a 60 min gap between latency Imerg: {nowcast_older-timedelta(minutes=30)} and the latest geoTIFF file {formatted_latest_pptfile}")
                 print("    Latest Geotiff file available in folder:", formatted_latest_pptfile)
                 print("    Last IMERG file to download:", nowcast_older - timedelta(minutes=30))
                 #Downloading imerg files between dates
@@ -253,7 +255,7 @@ def get_new_precip(current_timestamp, ppt_server_path, precipFolder, email, Hind
         print("    No '.tif' files found in the precip folder.") 
         #If there is no files in folder, Download the entire chuck of dates 
         #from failtime (current time - 6h) to Nowcast time (current time -4h) 
-        initial_time = current_timestamp - timedelta(hours = 9.5) #sames as fail time
+        initial_time = current_timestamp - timedelta(hours = 9.5)
         #Downloading imerg Files
         nowcast_older_server = nowcast_older - timedelta(minutes=60)
         initial_time_server = initial_time - timedelta(minutes=30)
