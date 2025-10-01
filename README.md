@@ -1,5 +1,5 @@
-# Threading Inputs to Outputs (TITO)
-TITO is a framework designed to run the EF5 hydrologic model operationally, integrating satellite data and machine learning techniques to support real-time forecasting and hydrologic analysis.
+# Threading Inputs to Outputs (TITO): Real-time Precipitation Nowcasting & Multi-source Hydrologic Forecasting
+TITO is a framework designed to run the EF5 hydrologic model operationally, integrating satellite data, machine learning techniques and NWP products to support real-time forecasting and hydrologic analysis.
 
 ## Installation Instructions
 **1. Clone the repository**
